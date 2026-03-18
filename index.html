@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechSpire Cloud Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<!-- Razorpay -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<style>
+body{margin:0;font-family:Poppins;background:#0b0b15;color:white}
+header{text-align:center;padding:60px;background:linear-gradient(135deg,#4b0082,#8a2be2)}
+input,button{padding:12px;margin:8px;border:none;border-radius:5px}
+button{background:#8a2be2;color:white;cursor:pointer}
+.card{background:#151528;padding:20px;border-radius:10px;margin:10px}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50px;color:white;text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+<img src="logo.png" width="120">
+<h1>TechSpire Cloud Academy</h1>
+<p>Don’t Just Learn Cloud. Work Like a Cloud Engineer.</p>
+<button onclick="payNow()">Enroll Now</button>
+</header>
+
+<section style="text-align:center;padding:40px">
+<h2>📩 Get Free Demo</h2>
+<input id="name" placeholder="Name"><br>
+<input id="phone" placeholder="Phone"><br>
+<button onclick="saveLead()">Submit</button>
+</section>
+
+<section style="text-align:center">
+<h2>📚 Curriculum</h2>
+<div class="card">AWS: EC2, S3, VPC, RDS</div>
+<div class="card">DevOps: Docker, K8s, CI/CD</div>
+</section>
+
+<section style="text-align:center">
+<h2>⭐ Testimonials</h2>
+<div class="card">"Got job in 60 days"</div>
+<div class="card">"Best cloud training"</div>
+</section>
+
+<section style="text-align:center">
+<h2>📊 Admin Panel</h2>
+<button onclick="getLeads()">Load Leads</button>
+<div id="data"></div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">Chat</a>
+
+<script>
+// 🔥 FIREBASE CONFIG (replace this)
+var firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT.firebaseio.com",
+  projectId: "YOUR_PROJECT",
+};
+firebase.initializeApp(firebaseConfig);
+var db = firebase.database();
+
+// Save Lead
+function saveLead(){
+ let name=document.getElementById('name').value;
+ let phone=document.getElementById('phone').value;
+ db.ref('leads').push({name,phone});
+ alert('Saved!');
+}
+
+// Get Leads
+function getLeads(){
+ db.ref('leads').once('value',snap=>{
+   let html='';
+   snap.forEach(c=>{
+     let d=c.val();
+     html+=`<p>${d.name} - ${d.phone}</p>`;
+   });
+   document.getElementById('data').innerHTML=html;
+ });
+}
+
+// Payment
+function payNow(){
+ var options={
+  key:"YOUR_RAZORPAY_KEY",
+  amount:500000,
+  currency:"INR",
+  name:"TechSpire",
+  handler:function(){alert('Payment Success')}
+ };
+ new Razorpay(options).open();
+}
+</script>
+
+</body>
+</html>
