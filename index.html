@@ -9,64 +9,76 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
+}
+
+/* HERO */
+.hero {
+    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') center/cover no-repeat;
+    height: 100vh;
     color: white;
-    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') no-repeat center center/cover;
-}
-
-/* Overlay */
-.overlay {
-    background: rgba(0,0,0,0.7);
-    min-height: 100vh;
-}
-
-/* Header */
-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 30px;
+    background-color: rgba(0,0,0,0.6);
+    background-blend-mode: darken;
 }
 
-header h1 {
-    font-size: 40px;
-    margin: 0;
+.hero h1 { font-size: 48px; }
+.hero p { font-size: 20px; }
+
+/* BUTTON */
+.btn {
+    background: #ff9800;
+    padding: 12px 25px;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 15px;
 }
 
-header p {
-    font-size: 18px;
-}
-
-/* Section */
+/* SECTION */
 .section {
-    padding: 40px;
+    padding: 60px 20px;
     text-align: center;
 }
 
-/* Courses */
+/* COURSES */
 .courses {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
 .card {
-    background: white;
-    color: black;
-    width: 260px;
+    width: 280px;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
-.card h3 {
-    margin-top: 0;
+/* WHY US */
+.why {
+    background: #f5f5f5;
 }
 
-/* Form */
+.why div {
+    margin: 10px 0;
+}
+
+/* TESTIMONIAL */
+.testimonial {
+    max-width: 600px;
+    margin: auto;
+    font-style: italic;
+}
+
+/* FORM */
 .form-box {
-    background: rgba(255,255,255,0.1);
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 500px;
+    max-width: 400px;
     margin: auto;
 }
 
@@ -74,85 +86,86 @@ input, select {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border-radius: 6px;
-    border: none;
 }
 
-button {
-    background: #ff9800;
-    border: none;
-    padding: 12px;
-    width: 100%;
+/* FOOTER */
+footer {
+    background: black;
     color: white;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 20px;
 }
 
-/* WhatsApp floating button */
-.whatsapp-float {
+/* WHATSAPP FLOAT */
+.whatsapp {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: #25D366;
+    padding: 15px;
+    border-radius: 50%;
     color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
     text-decoration: none;
-    font-size: 16px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: rgba(0,0,0,0.8);
 }
 </style>
 </head>
 
 <body>
 
-<div class="overlay">
-
-<header>
+<!-- HERO -->
+<div class="hero">
     <h1>TechSpire Cloud Academy</h1>
-    <p>Build Your Career in Cloud, DevOps & IT</p>
-</header>
+    <p>Master AWS, DevOps & Testing with Job Assistance</p>
+    <a href="#form" class="btn">Enroll Now</a>
+</div>
 
+<!-- COURSES -->
 <div class="section">
     <h2>Our Courses</h2>
-
     <div class="courses">
 
         <div class="card">
             <h3>AWS Cloud Computing</h3>
-            <p>Real-time projects, interview prep & placement support.</p>
+            <p>Real-time projects + certification guidance</p>
         </div>
 
         <div class="card">
             <h3>DevOps</h3>
-            <p>Docker, Kubernetes, CI/CD pipelines with hands-on training.</p>
+            <p>Docker, Kubernetes, CI/CD hands-on training</p>
         </div>
 
         <div class="card">
             <h3>Software Testing</h3>
-            <p>Manual & Automation testing with industry tools.</p>
+            <p>Manual + Automation with real tools</p>
         </div>
 
     </div>
 </div>
 
+<!-- WHY US -->
+<div class="section why">
+    <h2>Why Choose Us</h2>
+    <div>✅ 100% Job Assistance</div>
+    <div>✅ Real-Time Projects</div>
+    <div>✅ Interview Preparation</div>
+    <div>✅ Industry Expert Trainers</div>
+</div>
+
+<!-- TESTIMONIAL -->
 <div class="section">
+    <h2>Student Testimonials</h2>
+    <div class="testimonial">
+        "Best AWS training! Helped me switch career into cloud. Highly recommended!"
+    </div>
+</div>
+
+<!-- FORM -->
+<div class="section" id="form">
     <h2>Register Now</h2>
 
     <div class="form-box">
         <form onsubmit="sendToWhatsApp(event)">
-
             <input type="text" id="name" placeholder="Your Name" required>
-
             <input type="tel" id="phone" placeholder="Phone Number" required>
-
             <input type="email" id="email" placeholder="Email" required>
 
             <select id="course">
@@ -161,43 +174,38 @@ footer {
                 <option>Testing</option>
             </select>
 
-            <button type="submit">Enroll Now</button>
-
+            <button class="btn" type="submit">Submit</button>
         </form>
     </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 TechSpire Cloud Academy | All Rights Reserved</p>
+    <p>📞 Contact: 9900047663</p>
+    <p>© 2026 TechSpire Cloud Academy</p>
 </footer>
 
-</div>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/919900047663" target="_blank">💬</a>
 
-<!-- Floating WhatsApp -->
-<a class="whatsapp-float" href="https://wa.me/919900047663" target="_blank">
-    Chat on WhatsApp
-</a>
-
+<!-- SCRIPT -->
 <script>
-function sendToWhatsApp(event) {
-    event.preventDefault();
+function sendToWhatsApp(e) {
+    e.preventDefault();
 
     var name = document.getElementById("name").value;
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     var course = document.getElementById("course").value;
 
-    var message =
+    var msg =
         "New Student Enquiry - TechSpire Cloud Academy%0A%0A" +
         "Name: " + encodeURIComponent(name) + "%0A" +
         "Phone: " + encodeURIComponent(phone) + "%0A" +
         "Email: " + encodeURIComponent(email) + "%0A" +
-        "Course: " + encodeURIComponent(course) + "%0A%0A" +
-        "Hi, I am interested in this course. Please share details.";
+        "Course: " + encodeURIComponent(course);
 
-    var url = "https://wa.me/919900047663?text=" + message;
-
-    window.open(url, "_blank");
+    window.open("https://wa.me/919900047663?text=" + msg, "_blank");
 }
 </script>
 
