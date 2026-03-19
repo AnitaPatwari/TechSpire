@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechSpire Cloud Academy</title>
+<title>About Us - TechSpire Cloud Academy</title>
 
 <style>
 body {
@@ -11,204 +11,126 @@ body {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* HERO */
-.hero {
-    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') center/cover no-repeat;
-    height: 100vh;
-    color: white;
+/* NAVBAR */
+.navbar {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    background-color: rgba(0,0,0,0.6);
-    background-blend-mode: darken;
-}
-
-.hero h1 { font-size: 48px; }
-.hero p { font-size: 20px; }
-
-/* BUTTON */
-.btn {
-    background: #ff9800;
-    padding: 12px 25px;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-top: 15px;
-}
-
-/* SECTION */
-.section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-/* COURSES */
-.courses {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.card {
-    width: 280px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-}
-
-/* WHY US */
-.why {
-    background: #f5f5f5;
-}
-
-.why div {
-    margin: 10px 0;
-}
-
-/* TESTIMONIAL */
-.testimonial {
-    max-width: 600px;
-    margin: auto;
-    font-style: italic;
-}
-
-/* FORM */
-.form-box {
-    max-width: 400px;
-    margin: auto;
-}
-
-input, select {
+    padding: 15px 50px;
+    background: transparent;
+    position: absolute;
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
+    color: white;
 }
 
-/* FOOTER */
-footer {
-    background: black;
-    color: white;
-    padding: 20px;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00c6ff;
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    padding: 15px;
-    border-radius: 50%;
-    color: white;
+.nav-links a {
+    margin: 0 15px;
     text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.demo-btn {
+    border: 1px solid orange;
+    padding: 8px 18px;
+    border-radius: 25px;
+    color: orange;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    background: linear-gradient(to right, #0b3c6f, #0a6ed1);
+    color: white;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.quote {
+    margin-top: 20px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* IMAGE */
+.hero img {
+    width: 500px;
+    max-width: 100%;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .hero img {
+        margin-top: 30px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>TechSpire Cloud Academy</h1>
-    <p>Master AWS, DevOps & Testing with Job Assistance</p>
-    <a href="https://wa.me/919900047663?text=Hi%20I%20am%20interested%20in%20AWS%20Cloud%20Computing%20course.%20Please%20share%20details" target="_blank">
-    Enroll Now
-</a>
-</div>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">TechSpire</div>
 
-<!-- COURSES -->
-<div class="section">
-    <h2>Our Courses</h2>
-    <div class="courses">
-
-        <div class="card">
-            <h3>AWS Cloud Computing</h3>
-            <p>Real-time projects + certification guidance</p>
-        </div>
-
-        <div class="card">
-            <h3>DevOps</h3>
-            <p>Docker, Kubernetes, CI/CD hands-on training</p>
-        </div>
-
-        <div class="card">
-            <h3>Software Testing</h3>
-            <p>Manual + Automation with real tools</p>
-        </div>
-
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Courses</a>
+        <a href="#">Contact</a>
     </div>
+
+    <div class="demo-btn">Free Demo</div>
 </div>
 
-<!-- WHY US -->
-<div class="section why">
-    <h2>Why Choose Us</h2>
-    <div>✅ 100% Job Assistance</div>
-    <div>✅ Real-Time Projects</div>
-    <div>✅ Interview Preparation</div>
-    <div>✅ Industry Expert Trainers</div>
-</div>
+<!-- HERO / ABOUT SECTION -->
+<section class="hero">
 
-<!-- TESTIMONIAL -->
-<div class="section">
-    <h2>Student Testimonials</h2>
-    <div class="testimonial">
-        "Best AWS training! Helped me switch career into cloud. Highly recommended!"
+    <div class="hero-text">
+        <h1>About Us</h1>
+
+        <p>
+        We strive to provide IT professionals with real-world cloud expertise 
+        to succeed in today’s competitive market.
+        </p>
+
+        <p class="quote">
+        "Learn who we are, what we do & how we do it!"
+        </p>
     </div>
-</div>
 
-<!-- FORM -->
-<div class="section" id="form">
-    <h2>Register Now</h2>
+    <!-- Replace with your image -->
+    <img src="https://cdn-icons-png.flaticon.com/512/4149/4149675.png" alt="Cloud Learning">
 
-    <div class="form-box">
-        <form onsubmit="sendToWhatsApp(event)">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="tel" id="phone" placeholder="Phone Number" required>
-            <input type="email" id="email" placeholder="Email" required>
-
-            <select id="course">
-                <option>AWS Cloud Computing</option>
-                <option>DevOps</option>
-                <option>Testing</option>
-            </select>
-
-            <button class="btn" type="submit">Submit</button>
-        </form>
-    </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-    <p>📞 Contact: 9900047663</p>
-    <p>© 2026 TechSpire Cloud Academy</p>
-</footer>
-
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/919900047663" target="_blank">💬</a>
-
-<!-- SCRIPT -->
-<script>
-function sendToWhatsApp() {
-    var name = document.getElementById("name").value;
-    var phone = document.getElementById("phone").value;
-    var course = document.getElementById("course").value;
-
-    var message = `Hi 👋 Thanks for your interest in TechSpire Cloud Academy!
-
-Name: ${name}
-Phone: ${phone}
-Course: ${course}
-
-I am interested. Please share details.`;
-
-    var url = "https://api.whatsapp.com/send?phone=919900047663&text=" + encodeURIComponent(message;
-    window.open(url, '_blank');
-}
-</script>
+</section>
 
 </body>
 </html>
